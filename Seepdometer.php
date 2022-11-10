@@ -1,17 +1,17 @@
-<?php
-
 class Speedometer
 {
+    public const MILE_TO_KM = 1.609344;
+    public const KM_TO_MILES = 0.62137119;
 
-    public const KMILES_CONVERSION = 0.6213711922;
-
-    public static function KmtoMiles(int $km): float
+    public static function convertKmToMiles($km)
     {
-        return $km * self::KMILES_CONVERSION;
+        $miles = round($km * self::KM_TO_MILES, 2, PHP_ROUND_HALF_DOWN);
+        return $km . " km-miles: " . $miles;
     }
 
-    public static function MilestoKM(int $km): float
+    public static function convertMilesToKm($miles)
     {
-        return $km / self::KMILES_CONVERSION;
+        $km = round($miles * self::MILE_TO_KM, 2, PHP_ROUND_HALF_DOWN);
+        return $miles . " mile-km: " . $km;
     }
 }
