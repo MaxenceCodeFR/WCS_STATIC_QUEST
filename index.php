@@ -2,5 +2,7 @@
 
 require 'Speedometer.php';
 
-echo '10 Kms = ' . Speedometer::KmtoMiles(10) . 'Miles';
-echo '10 Miles = ' . Speedometer::MilestoKM(10) . 'Kms';
+
+echo Speedometer::convertKmToMiles(10) . PHP_EOL;
+
+echo Speedometer::convertMilesToKm(10) . PHP_EOL;
